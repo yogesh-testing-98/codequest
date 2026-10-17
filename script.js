@@ -69,7 +69,9 @@ function selectLevel(id) {
   level.commands.forEach(command => { const chip = document.createElement('span'); chip.className = 'command-chip'; chip.textContent = command; $('commandChips').appendChild(chip); });
   $('showSolutionButton').textContent = 'Show example';
   resetGame(); renderLevelCards();
-  if (location.hash !== '#game') location.hash = 'game';
+  
+history.replaceState(null, '', location.pathname + location.search);
+
 }
 function resetGame() {
   stopExecution(); const level = levelData(); position = [...level.start]; direction = 'right'; collected = new Set();
