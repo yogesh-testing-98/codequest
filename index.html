@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CodeQuest — Learn Python by Playing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="CodeQuest home"><span class="brand-icon">CQ</span><span>CodeQuest</span></a>
+    <nav><a href="#learn">Learning path</a><a href="#game">Play</a></nav>
+    <div class="top-progress"><span id="headerProgressText">0 / 6 levels</span><div class="progress-track"><div id="headerProgress" class="progress-fill"></div></div></div>
+  </header>
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-copy"><p class="eyebrow">A PLAYFUL WAY TO LEARN PYTHON</p><h1>Think like a coder.<br><span>Play like a gamer.</span></h1><p class="hero-subtitle">Guide your robot through puzzles while learning commands, loops and functions — one level at a time.</p><div class="hero-actions"><button id="continueButton" class="button primary">Continue learning <span>→</span></button><a class="button secondary" href="#learn">Explore levels</a></div><div class="hero-stats"><div><strong id="heroCompleted">0</strong><span>Levels cleared</span></div><div><strong id="heroStars">0</strong><span>Stars earned</span></div><div><strong>Python</strong><span>Learning language</span></div></div></div>
+      <div class="hero-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="hero-robot">🤖</div><div class="floating-card card-code"><span class="dot green"></span><code>for step in range(4):</code><br><code>&nbsp;&nbsp;move()</code></div><div class="floating-card card-star">✦ <b>+100 XP</b></div><div class="floating-card card-flag">🏁 <span>Goal reached!</span></div></div>
+    </section>
+
+    <section id="learn" class="section-block">
+      <div class="section-heading"><div><p class="eyebrow">YOUR ADVENTURE</p><h2>Choose a level</h2><p class="muted">Start with the basics, then unlock loops and functions.</p></div><div class="level-summary"><span class="summary-dot"></span><span id="levelSummary">0 of 6 completed</span></div></div>
+      <div id="levelCards" class="level-grid"></div>
+    </section>
+
+    <section id="game" class="game-section">
+      <div class="section-heading game-heading"><div><p class="eyebrow">CODING ARENA</p><h2 id="gameTitle">Level 1: First steps</h2><p id="gameDescription" class="muted">Use four move() commands to reach the flag.</p></div><div class="game-controls-top"><button id="hintButton" class="button secondary small">💡 Hint</button><button id="resetButton" class="button secondary small">↺ Reset</button></div></div>
+      <div class="game-layout">
+        <div class="board-panel panel"><div class="panel-top"><div><span class="live-dot"></span><strong>Robot world</strong></div><span id="positionLabel" class="chip">Start: (0, 0)</span></div><div id="gameGrid" class="game-grid" aria-label="Robot puzzle grid"></div><div class="board-legend"><span>🤖 Robot</span><span>🏁 Goal</span><span>🧱 Wall</span><span>🪙 Coin</span></div><div id="gameMessage" class="game-message" role="status">Ready when you are. Write code, then press Run.</div></div>
+        <div class="editor-panel panel"><div class="panel-top"><div><span class="editor-icon">{ }</span><strong>Python editor</strong></div><span class="chip chip-python">PYTHON 3</span></div><p class="editor-instructions">Write Python code using the commands available for this level.</p><div class="editor-wrap"><div class="line-numbers" id="lineNumbers">1<br>2<br>3<br>4</div><textarea id="codeEditor" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" aria-label="Python code editor"></textarea></div><div class="command-help"><span>Available commands</span><div id="commandChips" class="command-chips"></div></div><div class="editor-actions"><button id="runButton" class="button primary run-button">▶ Run code</button><button id="showSolutionButton" class="button secondary">Show example</button></div><p class="editor-footnote">Runs in a separate browser worker. Use only code you understand.</p></div>
+      </div>
+    </section>
+
+    <section class="lesson-section"><div class="lesson-card"><div class="lesson-symbol">📘</div><div class="lesson-copy"><p class="eyebrow">WHAT YOU'RE LEARNING</p><h2 id="lessonTitle">Sequence: one instruction at a time</h2><p id="lessonText">Python runs instructions from top to bottom. Each move() command moves the robot one tile.</p></div><div class="lesson-tip"><strong>Coder tip</strong><p id="lessonTip">Four steps forward means four move() calls.</p></div></div></section>
+    <footer><div class="brand footer-brand"><span class="brand-icon">CQ</span><span>CodeQuest</span></div><p>Learn by experimenting. Make mistakes. Try again.</p><span class="footer-note">Learning prototype · Progress saved in this browser</span></footer>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
